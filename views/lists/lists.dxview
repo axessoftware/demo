@@ -1,0 +1,9 @@
+<div data-options="dxView : { name: 'lists', title: 'Nomenclatoare' } ">
+    <div class="home-view" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-bind="dxList: { dataSource: sourceData.data }">
+            <div data-options="dxTemplate: { name: 'item' }" data-bind="dxAction: action">
+                <div><span data-bind="text: name"></span></div>
+            </div>
+        </div>
+    </div>
+</div>

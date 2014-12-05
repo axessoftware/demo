@@ -1,0 +1,43 @@
+<div data-options="dxView : { name: 'login', title: 'Autentificare' } ">
+    <div data-bind="dxCommand: { id: 'preferences', action: handlers.preferences.click, icon: 'preferences' } "></div>
+    <div data-bind="dxCommand: { id: 'sync', action: handlers.sync.click, icon: 'refresh', disabled: handlers.sync.disabled } "></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div class="dx-fieldset" style="margin-top: 5px;">
+            <div class="dx-field">
+                <div class="dx-field-label">Utilizator:</div>
+                <div class="dx-field-value">
+                    <div id="username" data-bind="dxTextBox: { value: fields.username.value, valueUpdateEvent : [ 'keyup', 'blur'], enterKeyAction: fields.username.onEnterKeyPress }" tabindex="1" />
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Parolă:</div>
+                <div class="dx-field-value">
+                    <div id="password" data-bind="dxTextBox: { value: fields.password.value, valueUpdateEvent : [ 'keyup', 'blur'], enterKeyAction: fields.password.onEnterKeyPress, mode: 'password' }" tabindex="2" />
+                </div>
+            </div>
+            <div class="dx-field">
+                <div class="dx-field-label">Ține-mă minte:</div>
+                <div class="dx-field-value">
+                    <div data-bind="dxCheckBox: { value: fields.keepMeSignedIn.value, valueUpdateEvent : [ 'keyup', 'blur'] }" tabindex="3" />
+                </div>
+            </div>
+            <div class="dx-field" style="text-align: center; vertical-align: middle; padding-left: 5px; padding-right: 5px;">
+                <div id="btnAuthenticate" data-bind="dxButton: { text: 'Autentificare', clickAction: handlers.authenticate.click, disabled: handlers.authenticate.disabled }"
+                    style="width: 98%; margin-top: 5px;" tabindex="4" />
+            </div>
+        </div>
+        <div data-bind="dxLoadPanel: { message: 'Autentificare în progres...', visible: progress.authentication.visible }"></div>
+        <div data-bind="dxLoadPanel: { message: 'Sincronizare în progres...', visible: progress.sync.visible }"></div>
+        <div id="popup" data-bind="dxPopup: {}" style="overflow: hidden;">
+            <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+                <div class="title-button" data-bind="dxButton: { icon: 'close', clickAction: popup.hide }" style="float: right; margin-top: 5px;"></div>
+                <h2 style="float: left;" data-bind="text: popup.title">Title</h2>
+            </div>
+            <div id="popupContent" data-options="dxTemplate : { name: 'content' } " style="position: relative; height: 100%;">
+                <div class="popup-content" style="height: 100%;">
+                    <div data-bind="dxTextArea:{ value: popup.text, readOnly: true, mode: 'text', height: 'inherit'}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

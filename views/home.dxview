@@ -1,0 +1,13 @@
+<div data-options="dxView : { name: 'home', title: 'Acasă' } ">
+    <div class="home-view" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <!-- ko if: sync.lastDate() -->
+        <div class="dx-fieldset" style="margin-top: 10px; margin-bottom: 10px;">
+            <p style="margin-top: 5px; margin-bottom: 5px; color: darkorange;">Data ultimei sincronizări</p>
+            <hr style="margin: 0px;" />
+            <div class="dx-field">
+                <span data-bind="text: sync.lastDate() ? sync.lastDate().format('hh:mm - dd.MM.yyyy') : '-'"></span>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

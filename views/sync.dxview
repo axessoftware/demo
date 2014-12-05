@@ -1,0 +1,23 @@
+<div data-options="dxView : { name: 'sync', title: 'Sincronizare' } ">
+    <div data-bind="dxCommand: { id: 'save', action: handlers.sync.click, icon: 'refresh', disabled: handlers.sync.disabled } "></div>
+    <div class="home-view" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-bind="dxList: { dataSource: scopes.list }">
+            <div data-options="dxTemplate: { name: 'item' }" data-bind="dxAction:  $root.scopes.click">
+                <div><span style="font-size: medium;" data-bind="text: caption"></span></div>
+                <div><span style="font-size: small;" data-bind="text: 'Dată sincronizare: '"></span><span style="font-size: small;" data-bind="text: lastSync ? lastSync.format('hh:mm - dd.MM.yyyy') : '-'"></span></div>
+            </div>
+        </div>
+        <div data-bind="dxLoadPanel: { message: 'Sincronizare în progres...', visible: progress.sync.visible }"></div>
+        <div id="popup" data-bind="dxPopup: {}" style="overflow: hidden;">
+            <div class="dx-clearfix" data-options="dxTemplate : { name: 'title' } ">
+                <div class="title-button" data-bind="dxButton: { icon: 'close', clickAction: popup.hide }" style="float: right; margin-top: 5px;"></div>
+                <h2 style="float: left;" data-bind="text: popup.title">Title</h2>
+            </div>
+            <div id="popupContent" data-options="dxTemplate : { name: 'content' } " style="position: relative; height: 100%;">
+                <div class="popup-content" style="height: 100%;">
+                    <div data-bind="dxTextArea:{ value: popup.text, readOnly: true, mode: 'text', height: 'inherit'}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

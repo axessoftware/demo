@@ -1,0 +1,4 @@
+<div data-options="dxView : { name: 'activities', title: 'Activități' } ">
+    <div class="home-view" data-options="dxContent : { targetPlaceholder: 'content' } ">
+    </div>
+</div>
