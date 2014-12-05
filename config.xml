@@ -74,7 +74,7 @@
   <gap:plugin name="org.apache.cordova.network-information" />
   <gap:plugin name="org.apache.cordova.splashscreen" />
   <gap:plugin name="org.apache.cordova.vibration" />
-  <gap:plugin name="com.millerjames01.sqlite-plugin" />
+  <gap:plugin name="com.brodysoft.sqliteplugin" />
   <gap:plugin name="com.megster.cordova.bluetoothserial"/>
   <gap:plugin name="nl.x-services.plugins.insomnia" />
   
